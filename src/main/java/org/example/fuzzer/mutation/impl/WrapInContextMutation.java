@@ -54,7 +54,7 @@ public class WrapInContextMutation implements Mutation {
                 newStmt.addComment(c.clone());
             }
 
-            stmt.replace((CtElement) newStmt);
+            stmt.replace(newStmt);
         }
     }
 

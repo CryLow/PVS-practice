@@ -42,7 +42,7 @@ public class ReplaceVariableTypeMutation implements Mutation {
                         case "short"  -> variable.getFactory().Type().shortPrimitiveType();
                         default -> throw new IllegalStateException("Unknown type: " + replacementType);
                     };
-                    ((CtLocalVariable) variable).setType(newType);
+                    variable.setType(newType);
                 }
                 super.visitCtLocalVariable(variable);
             }

@@ -70,7 +70,7 @@ public final class AstUtils {
     public static void replaceBinaryOperatorWithSnippet(CtBinaryOperator<?> target, String expressionSource) {
         Factory factory = target.getFactory();
         CtExpression<Object> snippet = factory.Code().createCodeSnippetExpression(expressionSource);
-        ((CtExpression<Object>) target).replace(snippet);
+        target.replace(snippet);
     }
 
     public static CtStatement nearestStatement(CtElement element) {

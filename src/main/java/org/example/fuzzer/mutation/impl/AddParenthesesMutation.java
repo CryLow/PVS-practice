@@ -25,12 +25,12 @@ public class AddParenthesesMutation implements Mutation {
     private void wrapAll(CtElement root, int depth) {
         List<CtBinaryOperator<?>> ops = AstUtils.binaryOperators(root);
         for (CtBinaryOperator<?> op : ops) {
-            String left = op.getLeftHandOperand().toString();
-            String right = op.getRightHandOperand().toString();
+            StringBuilder left = new StringBuilder(op.getLeftHandOperand().toString());
+            StringBuilder right = new StringBuilder(op.getRightHandOperand().toString());
             String operator = AstUtils.javaOperator(op.getKind());
             for (int i = 0; i < depth; i++) {
-                left = "(" + left + ")";
-                right = "(" + right + ")";
+                left = new StringBuilder("(" + left + ")");
+                right = new StringBuilder("(" + right + ")");
             }
             AstUtils.replaceBinaryOperatorWithSnippet(op, left + " " + operator + " " + right);
         }
