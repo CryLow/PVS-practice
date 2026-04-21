@@ -29,7 +29,6 @@ public class ReplaceVariableTypeMutation implements Mutation {
         );
     }
 
-    @SuppressWarnings({"rawtypes"})
     private void replaceAll(CtElement root, String replacementType) {
         root.accept(new CtScanner() {
             @Override

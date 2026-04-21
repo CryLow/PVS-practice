@@ -66,7 +66,6 @@ public final class AstUtils {
         };
     }
 
-    @SuppressWarnings("unchecked")
     public static void replaceBinaryOperatorWithSnippet(CtBinaryOperator<?> target, String expressionSource) {
         Factory factory = target.getFactory();
         CtExpression<Object> snippet = factory.Code().createCodeSnippetExpression(expressionSource);
